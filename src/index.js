@@ -35,12 +35,12 @@ const season = YAML.parse(await readFile(path, "utf-8"));
 
 const extractLinks = (lang, ep) =>
   Promise.all(
-    Object.values(season.competenceAreas).flatMap(({ competences }: any) =>
-      Object.values(competences).flatMap(({ subCompetences }: any) =>
-        Object.values(subCompetences).flatMap(({ testItems }: any) =>
+    Object.values(season.competenceAreas).flatMap(({ competences }) =>
+      Object.values(competences).flatMap(({ subCompetences }) =>
+        Object.values(subCompetences).flatMap(({ testItems }) =>
           Object.entries(testItems)
-            .filter(([_, { episode }]: any) => episode === ep)
-            .flatMap(([testId, { search }]: any) =>
+            .filter(([_, { episode }]) => episode === ep)
+            .flatMap(([testId, { search }]) =>
               search?.[lang]?.links.flatMap(async (url) => {
                 try {
                   const { headers, body } = await gotScraping(url);
