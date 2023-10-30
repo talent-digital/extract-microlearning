@@ -8,7 +8,6 @@ specifiers:
   dotenv: ^16.0.1
   got: ^12.1.0
   got-scraping: ^3.2.12
-  typescript: ^4.7.4
   yaml: ^2.1.1
 
 dependencies:
@@ -21,7 +20,6 @@ devDependencies:
   dotenv: 16.3.1
   got: 12.6.1
   got-scraping: 3.2.15
-  typescript: 4.9.5
   yaml: 2.3.3
 
 packages:
@@ -523,12 +521,6 @@ packages:
     resolution: {integrity: sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==}
     engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
     dev: false
-
-  /typescript/4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
-    dev: true
 
   /undici-types/5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}

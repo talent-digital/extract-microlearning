@@ -21,15 +21,7 @@ jobs:
     name: Extract Microlearning
     steps:
       - uses: actions/checkout@v3
-      - uses: talent-digital/extract-microlearning@v1.0
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7.26.3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 19
-          cache: "pnpm"
-      - uses: talent-digital/extract-microlearning@v1.0
+      - uses: talent-digital/extract-microlearning@v0.1.3
       - uses: EndBug/add-and-commit@v9
 ```
 
