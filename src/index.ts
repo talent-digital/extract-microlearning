@@ -9,6 +9,10 @@ import { join } from "path";
 
 const { GITHUB_WORKSPACE, INPUT_SEASON_FILE_PATH } = process.env;
 
+if (!GITHUB_WORKSPACE) {
+  throw new Error("GITHUB_WORKSPACE is not defined");
+}
+
 let rootPath = GITHUB_WORKSPACE;
 if (INPUT_SEASON_FILE_PATH) rootPath = `${rootPath}/${INPUT_SEASON_FILE_PATH}`;
 
@@ -31,12 +35,12 @@ const season = YAML.parse(await readFile(path, "utf-8"));
 
 const extractLinks = (lang, ep) =>
   Promise.all(
-    Object.values(season.competenceAreas).flatMap(({ competences }) =>
-      Object.values(competences).flatMap(({ subCompetences }) =>
-        Object.values(subCompetences).flatMap(({ testItems }) =>
+    Object.values(season.competenceAreas).flatMap(({ competences }: any) =>
+      Object.values(competences).flatMap(({ subCompetences }: any) =>
+        Object.values(subCompetences).flatMap(({ testItems }: any) =>
           Object.entries(testItems)
-            .filter(([_, { episode }]) => episode === ep)
-            .flatMap(([testId, { search }]) =>
+            .filter(([_, { episode }]: any) => episode === ep)
+            .flatMap(([testId, { search }]: any) =>
               search?.[lang]?.links.flatMap(async (url) => {
                 try {
                   const { headers, body } = await gotScraping(url);

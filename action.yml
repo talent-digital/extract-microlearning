@@ -9,4 +9,4 @@ inputs:
 
 runs:
   using: "node16"
-  main: "./extract-microlearning.mjs"
+  main: "./dist/index.js"

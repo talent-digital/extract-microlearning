@@ -5,11 +5,15 @@
   "exports": {
     ".": {
       "import": {
-        "default": "./extract-microlearning.mjs"
+        "default": "./build/index.js"
       }
     }
   },
   "type": "module",
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist",
+    "deploy": "npm run build && node -r dotenv/config dist/index.js"
+  },
   "pre-commit": [
     "build"
   ],
@@ -19,8 +23,13 @@
     "@actions/core": "^1.10.0"
   },
   "devDependencies": {
+    "@types/node": "^18.7.18",
+    "@vercel/ncc": "^0.34.0",
     "cheerio": "1.0.0-rc.12",
+    "dotenv": "^16.0.1",
     "got-scraping": "^3.2.12",
+    "got": "^12.1.0",
+    "typescript": "^4.7.4",
     "yaml": "^2.1.1"
   }
 }

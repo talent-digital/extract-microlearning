@@ -48,6 +48,10 @@ To run the script locally for windows, run the following command:
 _Note_
 Replace `GITHUB_WORKSPACE` with the path to the folder with your season.yaml file.
 
+### Making changes
+
+After you make changes in the src files, you need to update the `dist/index.js` file. This is the file that is used by the action. To update this file, run `pnpm build`.
+
 ### Releasing new version
 
 After merging your changes to the main branch use the github.com release / tag functionality. These tags are available in the workflows of the season repositories.
