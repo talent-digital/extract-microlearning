@@ -1,0 +1,26 @@
+{
+  "name": "extract-microlearning",
+  "version": "1.0.0",
+  "description": "A script that extracts training information based on season.yml file",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./extract-microlearning.mjs"
+      }
+    }
+  },
+  "type": "module",
+  "pre-commit": [
+    "build"
+  ],
+  "author": "talent::digital",
+  "license": "See license.md",
+  "dependencies": {
+    "@actions/core": "^1.10.0"
+  },
+  "devDependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "got-scraping": "^3.2.12",
+    "yaml": "^2.1.1"
+  }
+}

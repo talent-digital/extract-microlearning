@@ -1,0 +1,12 @@
+name: "Extract microlearning"
+description: "A script that extracts training information based on season.yml file"
+author: "talent::digital"
+
+inputs:
+  season_file_path:
+    description: "Custom path for `season.yaml`, default to root directory"
+    required: false
+
+runs:
+  using: "node16"
+  main: "./extract-microlearning.mjs"
