@@ -74795,6 +74795,10 @@ const extractLinks = (lang, ep) =>
                     embeddable: !headers["x-frame-options"],
                     url,
                     title: $("head > title").text(),
+                    description: $('meta[property="og:description"]').attr(
+                      "content"
+                    ),
+                    image: $('meta[property="og:image"]').attr("content"),
                   };
                 } catch (err) {
                   _actions_core__WEBPACK_IMPORTED_MODULE_5__.error(

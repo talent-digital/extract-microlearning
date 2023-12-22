@@ -35,7 +35,7 @@ jobs:
 
 To run the script locally for windows, run the following command:
 
-`export GITHUB_WORKSPACE=../my-season-path && node extract-microlearning.mjs`
+`export GITHUB_WORKSPACE=../my-season-path && pnpm run deploy`
 
 _Note_
 Replace `GITHUB_WORKSPACE` with the path to the folder with your season.yaml file.
