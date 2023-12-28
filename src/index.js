@@ -51,6 +51,10 @@ const extractLinks = (lang, ep) =>
                     embeddable: !headers["x-frame-options"],
                     url,
                     title: $("head > title").text(),
+                    description: $('meta[property="og:description"]').attr(
+                      "content"
+                    ),
+                    image: $('meta[property="og:image"]').attr("content"),
                   };
                 } catch (err) {
                   core.error(
