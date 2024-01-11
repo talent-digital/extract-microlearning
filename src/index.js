@@ -46,15 +46,20 @@ const extractLinks = (lang, ep) =>
                   const { headers, body } = await gotScraping(url);
                   const $ = cheerio.load(body);
 
+                  const description =
+                    $('meta[property="og:description"]').attr("content") ||
+                    $('meta[name="twitter:description"]').attr("content") ||
+                    $('meta[name="description"]').attr("content");
+                  const image =
+                    $('meta[property="og:image"]').attr("content") ||
+                    $('meta[name="twitter:image"]').attr("content");
                   return {
                     test: testId,
                     embeddable: !headers["x-frame-options"],
                     url,
                     title: $("head > title").text(),
-                    description: $('meta[property="og:description"]').attr(
-                      "content"
-                    ),
-                    image: $('meta[property="og:image"]').attr("content"),
+                    description,
+                    image,
                   };
                 } catch (err) {
                   core.error(
